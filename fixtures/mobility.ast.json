@@ -1,0 +1,93 @@
+{
+  "meta": {
+    "title": "Morning mobility",
+    "profile": "workout"
+  },
+  "variations": {},
+  "handles": {},
+  "sections": [
+    {
+      "name": "Mobility",
+      "anchor": "mobility",
+      "depth": 2,
+      "tags": [],
+      "attrs": { "each": "1m", "rest": "10s" },
+      "steps": [
+        {
+          "seq": 1,
+          "text": "Deep squat",
+          "duration": { "raw": "1m", "seconds": 60 },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 2,
+          "text": "Cobras",
+          "duration": { "raw": "90s", "seconds": 90 },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 3,
+          "text": "Greatest stretch",
+          "side": "left",
+          "duration": { "raw": "1m", "seconds": 60 },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 4,
+          "text": "Greatest stretch",
+          "side": "right",
+          "duration": { "raw": "1m", "seconds": 60 },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 5,
+          "text": "Pigeon",
+          "duration": { "raw": "45s", "seconds": 45 },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 6,
+          "text": "Ankles",
+          "side": "left",
+          "duration": { "raw": "1m", "seconds": 60 },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 7,
+          "text": "Ankles",
+          "side": "right",
+          "duration": { "raw": "1m", "seconds": 60 },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        }
+      ]
+    }
+  ]
+}

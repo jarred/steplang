@@ -1,0 +1,189 @@
+{
+  "meta": {
+    "title": "Kettlebell session",
+    "profile": "workout"
+  },
+  "variations": {
+    "deload": "60% loads, drop last set"
+  },
+  "handles": {},
+  "sections": [
+    {
+      "name": "EMOM",
+      "anchor": "emom",
+      "depth": 2,
+      "tags": [],
+      "attrs": {},
+      "scheme": { "kind": "emom", "cap": { "raw": "20m", "seconds": 1200 } },
+      "steps": [
+        {
+          "seq": 1,
+          "text": "goblet squats",
+          "prescription": {
+            "reps": { "kind": "number", "value": 15, "type": "count" },
+            "load": { "kind": "number", "value": 24, "unit": "kg", "type": "load" }
+          },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 2,
+          "text": "kb rows",
+          "prescription": {
+            "reps": { "kind": "number", "value": 10, "type": "count" },
+            "load": { "kind": "paired", "value": { "count": 2, "each": 12 }, "unit": "kg", "type": "load" }
+          },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 3,
+          "text": "kb push press",
+          "prescription": {
+            "reps": { "kind": "number", "value": 12, "type": "count" },
+            "load": { "kind": "paired", "value": { "count": 2, "each": 12 }, "unit": "kg", "type": "load" }
+          },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 4,
+          "text": "kb swings",
+          "prescription": {
+            "reps": { "kind": "number", "value": 15, "type": "count" },
+            "load": { "kind": "number", "value": 24, "unit": "kg", "type": "load" }
+          },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        }
+      ]
+    },
+    {
+      "name": "Superset A",
+      "anchor": "superset-a",
+      "depth": 2,
+      "tags": [],
+      "attrs": {},
+      "scheme": { "kind": "repeat", "rounds": 3, "rest": { "raw": "2m", "seconds": 120 }, "restBetween": "rounds" },
+      "steps": [
+        {
+          "seq": 1,
+          "text": "push press",
+          "prescription": {
+            "reps": { "kind": "number", "value": 10, "type": "count" },
+            "load": { "kind": "number", "value": 16, "unit": "kg", "type": "load" }
+          },
+          "side": "left",
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 2,
+          "text": "push press",
+          "prescription": {
+            "reps": { "kind": "number", "value": 10, "type": "count" },
+            "load": { "kind": "number", "value": 16, "unit": "kg", "type": "load" }
+          },
+          "side": "right",
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 3,
+          "text": "curls",
+          "prescription": {
+            "reps": { "kind": "number", "value": 12, "type": "count" },
+            "load": { "kind": "number", "value": 10, "unit": "kg", "type": "load" }
+          },
+          "side": "left",
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 4,
+          "text": "curls",
+          "prescription": {
+            "reps": { "kind": "number", "value": 12, "type": "count" },
+            "load": { "kind": "number", "value": 10, "unit": "kg", "type": "load" }
+          },
+          "side": "right",
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 5,
+          "text": "tri extensions",
+          "prescription": {
+            "reps": { "kind": "number", "value": 10, "type": "count" },
+            "load": { "kind": "number", "value": 10, "unit": "kg", "type": "load" }
+          },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        }
+      ]
+    },
+    {
+      "name": "Circuit C",
+      "anchor": "circuit-c",
+      "depth": 2,
+      "tags": [],
+      "attrs": {},
+      "scheme": { "kind": "repeat", "rounds": 3, "rest": { "raw": "30s", "seconds": 30 }, "restBetween": "items" },
+      "steps": [
+        {
+          "seq": 1,
+          "text": "burpees",
+          "prescription": {
+            "reps": { "kind": "number", "value": 10, "type": "count" }
+          },
+          "duration": { "raw": "1m", "seconds": 60 },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 2,
+          "text": "pushups",
+          "prescription": {
+            "reps": { "kind": "number", "value": 10, "type": "count" }
+          },
+          "duration": { "raw": "1m", "seconds": 60 },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        }
+      ]
+    }
+  ]
+}

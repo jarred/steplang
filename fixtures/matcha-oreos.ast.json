@@ -1,0 +1,214 @@
+{
+  "meta": {
+    "title": "Matcha Oreos",
+    "makes": "~14 large cookies",
+    "profile": "recipe"
+  },
+  "variations": {
+    "mint": "Peppermint Oreos"
+  },
+  "handles": {},
+  "sections": [
+    {
+      "name": "Base",
+      "anchor": "base",
+      "depth": 2,
+      "tags": [],
+      "attrs": {},
+      "steps": [
+        {
+          "seq": 1,
+          "text": "Pre-heat your oven to 180°C.",
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 2,
+          "text": "In a bowl, sift together and set aside:",
+          "ingredients": [
+            {
+              "raw": "1c cocoa",
+              "quantity": { "kind": "number", "value": 1, "unit": "c", "type": "volume" },
+              "item": "cocoa",
+              "tags": []
+            },
+            {
+              "raw": "2c flour",
+              "quantity": { "kind": "number", "value": 2, "unit": "c", "type": "volume" },
+              "item": "flour",
+              "tags": []
+            },
+            {
+              "raw": "pinch of salt",
+              "item": "pinch of salt",
+              "tags": []
+            }
+          ],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 3,
+          "text": "In another bowl cream until light and fluffy:",
+          "ingredients": [
+            {
+              "raw": "250g butter",
+              "quantity": { "kind": "number", "value": 250, "unit": "g", "type": "mass" },
+              "item": "butter",
+              "tags": []
+            },
+            {
+              "raw": "¾c brown sugar",
+              "quantity": { "kind": "fraction", "value": 0.75, "unit": "c", "type": "volume" },
+              "item": "brown sugar",
+              "tags": []
+            },
+            {
+              "raw": "1t vanilla paste",
+              "quantity": { "kind": "number", "value": 1, "unit": "t", "type": "volume" },
+              "item": "vanilla paste",
+              "tags": []
+            }
+          ],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 4,
+          "text": "Combine both bowls and knead together.",
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 5,
+          "text": "Roll out between two sheets of baking paper, ~5–8mm thick.",
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 6,
+          "text": "Refrigerate for [8 minutes](timer:8m).",
+          "ingredients": [],
+          "tokens": [
+            { "scheme": "timer", "raw": "8m", "duration": { "raw": "8m", "seconds": 480 } }
+          ],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 7,
+          "text": "Cut out ~28 circles with a cutter, re-rolling scraps; place on a lined tray.",
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 8,
+          "text": "Bake for [12 minutes](timer:12m). Meanwhile, [make the filling](goto:filling).",
+          "ingredients": [],
+          "tokens": [
+            { "scheme": "timer", "raw": "12m", "duration": { "raw": "12m", "seconds": 720 } },
+            { "scheme": "goto", "raw": "filling", "anchor": "filling" }
+          ],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 9,
+          "text": "Set aside to cool.",
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        }
+      ]
+    },
+    {
+      "name": "Filling",
+      "anchor": "filling",
+      "depth": 2,
+      "tags": [],
+      "attrs": {},
+      "steps": [
+        {
+          "seq": 1,
+          "text": "In a bowl, beat until smooth:",
+          "ingredients": [
+            {
+              "raw": "160g butter",
+              "quantity": { "kind": "number", "value": 160, "unit": "g", "type": "mass" },
+              "item": "butter",
+              "tags": []
+            },
+            {
+              "raw": "1¾c icing sugar",
+              "quantity": { "kind": "fraction", "value": 1.75, "unit": "c", "type": "volume" },
+              "item": "icing sugar",
+              "tags": []
+            },
+            {
+              "raw": "2t matcha powder {!mint}",
+              "quantity": { "kind": "number", "value": 2, "unit": "t", "type": "volume" },
+              "item": "matcha powder",
+              "tags": [{ "dim": "var", "name": "mint", "negated": true }]
+            },
+            {
+              "raw": "2.5t peppermint essence {mint}",
+              "quantity": { "kind": "number", "value": 2.5, "unit": "t", "type": "volume" },
+              "item": "peppermint essence",
+              "tags": [{ "dim": "var", "name": "mint", "negated": false }]
+            },
+            {
+              "raw": "1t vanilla",
+              "quantity": { "kind": "number", "value": 1, "unit": "t", "type": "volume" },
+              "item": "vanilla",
+              "tags": []
+            },
+            {
+              "raw": "pinch of salt",
+              "item": "pinch of salt",
+              "tags": []
+            },
+            {
+              "raw": "1T milk",
+              "quantity": { "kind": "number", "value": 1, "unit": "T", "type": "volume" },
+              "item": "milk",
+              "tags": []
+            }
+          ],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 2,
+          "text": "Pipe between two cooled cookies.",
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        }
+      ]
+    }
+  ]
+}

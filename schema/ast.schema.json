@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://steplang.dev/schema/ast.schema.json",
+  "title": "Step Lang AST",
+  "description": "Parse result for a Step Lang document. Mirrors the interfaces in docs/Spec.md §8. The wire/interchange contract that any parser implementation (Swift, TS, Rust) must emit.",
+  "type": "object",
+  "$ref": "#/$defs/Document",
+
+  "$defs": {
+    "Document": {
+      "type": "object",
+      "required": ["meta", "variations", "sections", "handles"],
+      "additionalProperties": false,
+      "properties": {
+        "meta": {
+          "type": "object",
+          "description": "Frontmatter, passed through. Reserved keys: title, makes (alias yields/serves/duration), profile.",
+          "properties": {
+            "title": { "type": "string" },
+            "profile": { "type": "string" },
+            "makes": { "type": "string" }
+          }
+        },
+        "variations": {
+          "type": "object",
+          "description": "tag -> human description (§4.3).",
+          "additionalProperties": { "type": "string" }
+        },
+        "sections": { "type": "array", "items": { "$ref": "#/$defs/Section" } },
+        "handles": {
+          "type": "object",
+          "description": "Global handle table: name -> the Ingredient that defined it (§5).",
+          "additionalProperties": { "$ref": "#/$defs/Ingredient" }
+        }
+      }
+    },
+
+    "Section": {
+      "type": "object",
+      "required": ["name", "anchor", "depth", "tags", "attrs", "steps"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "type": "string" },
+        "anchor": { "type": "string", "description": "slugified name, used as a goto: target" },
+        "depth": { "type": "integer", "minimum": 1, "description": "heading level (## = 2)" },
+        "tags": { "type": "array", "items": { "$ref": "#/$defs/Tag" } },
+        "attrs": { "$ref": "#/$defs/Attrs" },
+        "scheme": { "$ref": "#/$defs/Scheme" },
+        "steps": { "type": "array", "items": { "$ref": "#/$defs/Step" } }
+      }
+    },
+
+    "Step": {
+      "type": "object",
+      "required": ["seq", "text", "ingredients", "tokens", "refs", "tags", "attrs"],
+      "additionalProperties": false,
+      "properties": {
+        "seq": { "type": "integer", "minimum": 1 },
+        "text": { "type": "string" },
+        "prescription": {
+          "type": "object",
+          "description": "inline workout prescription (§9.1): reps and/or load as separate typed quantities",
+          "additionalProperties": false,
+          "properties": {
+            "reps": { "$ref": "#/$defs/Quantity" },
+            "load": { "$ref": "#/$defs/Quantity" }
+          }
+        },
+        "ingredients": { "type": "array", "items": { "$ref": "#/$defs/Ingredient" } },
+        "tokens": { "type": "array", "items": { "$ref": "#/$defs/Token" } },
+        "refs": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "@handles referenced in text"
+        },
+        "side": { "enum": ["left", "right"], "description": "set on items expanded from {side:both}" },
+        "tempo": {
+          "type": "array",
+          "items": { "oneOf": [{ "type": "number" }, { "const": "X" }] },
+          "description": "e.g. [3,1,3] or [3,1,'X',0]"
+        },
+        "duration": { "$ref": "#/$defs/Duration" },
+        "tags": { "type": "array", "items": { "$ref": "#/$defs/Tag" } },
+        "attrs": { "$ref": "#/$defs/Attrs" }
+      }
+    },
+
+    "Ingredient": {
+      "type": "object",
+      "required": ["raw", "item", "tags"],
+      "additionalProperties": false,
+      "properties": {
+        "raw": { "type": "string", "description": "original line text (normalized whitespace)" },
+        "quantity": { "$ref": "#/$defs/Quantity" },
+        "item": { "type": "string", "description": "the noun; whole text for unitless lines" },
+        "annotation": { "type": "string", "description": "_italic_ prep note" },
+        "handle": { "type": "string", "description": "kebab-case @handle defined on this line" },
+        "tags": { "type": "array", "items": { "$ref": "#/$defs/Tag" } }
+      }
+    },
+
+    "Quantity": {
+      "type": "object",
+      "required": ["kind", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "enum": ["number", "fraction", "range", "approx", "paired", "open"] },
+        "value": {
+          "oneOf": [
+            { "type": "number", "description": "number | fraction | approx" },
+            {
+              "type": "array",
+              "description": "range [lo, hi]",
+              "items": { "type": "number" },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            {
+              "type": "object",
+              "description": "paired count x each",
+              "required": ["count", "each"],
+              "additionalProperties": false,
+              "properties": {
+                "count": { "type": "number" },
+                "each": { "type": "number" }
+              }
+            },
+            { "const": "max", "description": "open / unbounded" }
+          ]
+        },
+        "unit": { "type": "string" },
+        "type": { "$ref": "#/$defs/UnitType" }
+      }
+    },
+
+    "UnitType": {
+      "enum": ["mass", "volume", "count", "duration", "temperature", "load", "unitless"]
+    },
+
+    "Attrs": {
+      "type": "object",
+      "description": "raw key:value entries from { } tokens",
+      "additionalProperties": { "type": "string" }
+    },
+
+    "Scheme": {
+      "type": "object",
+      "required": ["kind"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "enum": ["repeat", "emom", "amrap", "interval", "for-time"] },
+        "rounds": { "type": "integer", "minimum": 1 },
+        "cap": { "$ref": "#/$defs/Duration" },
+        "work": { "$ref": "#/$defs/Duration" },
+        "rest": { "$ref": "#/$defs/Duration" },
+        "restBetween": { "enum": ["rounds", "items"] }
+      }
+    },
+
+    "Tag": {
+      "type": "object",
+      "required": ["dim", "name", "negated"],
+      "additionalProperties": false,
+      "properties": {
+        "dim": { "type": "string", "description": "flat draft: always 'var' (§4.4)" },
+        "name": { "type": "string" },
+        "negated": { "type": "boolean" }
+      }
+    },
+
+    "Token": {
+      "type": "object",
+      "required": ["scheme", "raw"],
+      "additionalProperties": false,
+      "properties": {
+        "scheme": { "enum": ["timer", "goto"] },
+        "raw": { "type": "string" },
+        "duration": { "$ref": "#/$defs/Duration", "description": "resolved target for timer:" },
+        "anchor": { "type": "string", "description": "resolved section anchor for goto:" },
+        "step": { "type": "integer", "minimum": 1, "description": "resolved step:N target for goto:" }
+      }
+    },
+
+    "Duration": {
+      "type": "object",
+      "description": "Not in §8 verbatim; the obvious shape for timer/scheme durations. raw is the surface form, seconds the normalized value.",
+      "required": ["raw", "seconds"],
+      "additionalProperties": false,
+      "properties": {
+        "raw": { "type": "string", "description": "e.g. 12m, 90s, 1h30m" },
+        "seconds": { "type": "number", "minimum": 0 }
+      }
+    }
+  }
+}

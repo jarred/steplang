@@ -1,0 +1,108 @@
+{
+  "meta": {
+    "title": "WOD",
+    "profile": "workout"
+  },
+  "variations": {},
+  "handles": {},
+  "sections": [
+    {
+      "name": "AMRAP",
+      "anchor": "amrap",
+      "depth": 2,
+      "tags": [],
+      "attrs": {},
+      "scheme": { "kind": "amrap", "cap": { "raw": "12m", "seconds": 720 } },
+      "steps": [
+        {
+          "seq": 1,
+          "text": "pull-ups",
+          "prescription": { "reps": { "kind": "number", "value": 5, "type": "count" } },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 2,
+          "text": "push-ups",
+          "prescription": { "reps": { "kind": "number", "value": 10, "type": "count" } },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 3,
+          "text": "air squats",
+          "prescription": { "reps": { "kind": "number", "value": 15, "type": "count" } },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        }
+      ]
+    },
+    {
+      "name": "Tabata Hollow",
+      "anchor": "tabata-hollow",
+      "depth": 2,
+      "tags": [],
+      "attrs": {},
+      "scheme": {
+        "kind": "interval",
+        "rounds": 8,
+        "work": { "raw": "20s", "seconds": 20 },
+        "rest": { "raw": "10s", "seconds": 10 }
+      },
+      "steps": [
+        {
+          "seq": 1,
+          "text": "hollow rocks",
+          "prescription": { "reps": { "kind": "number", "value": 20, "type": "count" } },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        }
+      ]
+    },
+    {
+      "name": "For Time",
+      "anchor": "for-time",
+      "depth": 2,
+      "tags": [],
+      "attrs": {},
+      "scheme": { "kind": "for-time" },
+      "steps": [
+        {
+          "seq": 1,
+          "text": "thrusters",
+          "prescription": {
+            "reps": { "kind": "number", "value": 21, "type": "count" },
+            "load": { "kind": "number", "value": 43, "unit": "kg", "type": "load" }
+          },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 2,
+          "text": "pull-ups",
+          "prescription": { "reps": { "kind": "number", "value": 21, "type": "count" } },
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        }
+      ]
+    }
+  ]
+}

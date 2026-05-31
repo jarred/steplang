@@ -1,0 +1,61 @@
+{
+  "meta": {
+    "title": "Cheese scones"
+  },
+  "variations": {},
+  "handles": {
+    "cheese": {
+      "raw": "300g cheddar cheese @cheese",
+      "quantity": { "kind": "number", "value": 300, "unit": "g", "type": "mass" },
+      "item": "cheddar cheese",
+      "handle": "cheese",
+      "tags": []
+    }
+  },
+  "sections": [
+    {
+      "name": "Scones",
+      "anchor": "scones",
+      "depth": 2,
+      "tags": [],
+      "attrs": {},
+      "steps": [
+        {
+          "seq": 1,
+          "text": "Grate & mix in the cheese, reserving a handful for the top.",
+          "ingredients": [
+            {
+              "raw": "300g cheddar cheese @cheese",
+              "quantity": { "kind": "number", "value": 300, "unit": "g", "type": "mass" },
+              "item": "cheddar cheese",
+              "handle": "cheese",
+              "tags": []
+            }
+          ],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 2,
+          "text": "Roll out and cut into 15 rectangles.",
+          "ingredients": [],
+          "tokens": [],
+          "refs": [],
+          "tags": [],
+          "attrs": {}
+        },
+        {
+          "seq": 3,
+          "text": "Top with the reserved @cheese, then bake.",
+          "ingredients": [],
+          "tokens": [],
+          "refs": ["cheese"],
+          "tags": [],
+          "attrs": {}
+        }
+      ]
+    }
+  ]
+}
